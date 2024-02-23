@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <h1 class="fs-1 fw-bold text-center my-5"> Update Category </h1>
+
+    <div class="container">
+        <form method="POST" action="{{ url_for('category.updateCategory', category_id=category.id) }}">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Category Name</label>
+                {{ form.name(class="form-control", id="name") }}
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                {{ form.description(class="form-control", id="description") }}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+{% endblock %}

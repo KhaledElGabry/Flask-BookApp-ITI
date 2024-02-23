@@ -1,0 +1,36 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <h1 class="text-center">Update Book</h1>
+
+    <form method="POST" action="{{ url_for('books.updateform', id=book.id) }}">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            {{ form.name.label(class="form-label") }}: 
+            {{ form.name(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.price.label(class="form-label") }}: 
+            {{ form.price(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.NumberPage.label(class="form-label") }}: 
+            {{ form.NumberPage(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.image.label(class="form-label") }}: 
+            {{ form.image(class="form-control") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.category_id.label(class="form-label") }}: 
+            {{ form.category_id(class="form-control") }} 
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+{% endblock %}

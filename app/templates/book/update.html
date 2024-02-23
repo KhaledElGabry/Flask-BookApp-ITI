@@ -1,0 +1,25 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <h1 class='text-center'> Update Book </h1>
+
+    <form action="" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name='name' class="form-control" value="{{ book.name }}" >
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="number" name='price' class="form-control" value="{{ book.price }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Number of Page</label>
+            <input type="number" name='NumberPage' class="form-control" value="{{ book.NumberPage }}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Image</label>
+            <input type="text" name="image" class="form-control" value="{{ book.image }}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+{% endblock %}
